@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add product</title>
+             <!-- Custom Theme files -->
+   <link href="/static/css/register.css" rel="stylesheet" type="text/css" media="all" />
+   <!-- //Custom Theme files -->
+   <!-- web font -->
+   <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+   <!-- //web font -->
+   <script type="text/javascript"> 
+    function preventBack() { 
+        window.history.forward();  
+    } 
+      
+    setTimeout("preventBack()", 0); 
+      
+    window.onunload = function () { null }; 
+</script> 
+</head>
+<body class="body">
+<div class="main-w3layouts wrapper">
+    <h1>Update</h1>
+    <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form  method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                     <input class="text" type="text" name="name" value="{{b.Product_name}}" placeholder="Product name" required=""><br>
+                    <input class="text" type="text" name="qn" value="{{b.Quantity}}" placeholder="Quantity" required=""><br>
+                    <input class="text" type="text" name="price" value="{{b.Price}}" placeholder="Price" required=""><br>
+                    <input type="file" name="photo" required=""><br>         
+          <div class="wthree-text">
+           
+            <div class="clear"> </div>
+          </div>
+          <input type="submit" value="Add Product">
+        </form>
+      </div>
+    </div>
+        </div>
+        </body>
+</html>

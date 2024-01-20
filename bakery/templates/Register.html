@@ -1,0 +1,98 @@
+<!--
+Author: Colorlib
+Author URL: https://colorlib.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="/static/css/register.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+<script type="text/javascript"> 
+    function preventBack() { 
+        window.history.forward();  
+    } 
+      
+    setTimeout("preventBack()", 0); 
+      
+    window.onunload = function () { null }; 
+</script> 
+</head>
+<body class="body">
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>Create Account</h1>
+		<div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="#" method="post">
+                    {% csrf_token %}
+					<input class="text" type="text" name="fname" placeholder="Firstname" required=""><br>
+                    <input class="text" type="text" name="lname" placeholder="Lastname" required=""><br>
+                    <input class="text" type="text" name="address" placeholder="Address" required=""><br>
+                    <input class="text" type="text" name="place" placeholder="Place" required=""><br>
+                    <input class="text" type="email" name="email" placeholder="E-mail" required=""><br>
+                    <input class="text" type="text" name="phone" placeholder="Phone" required=""><br>
+                    <input class="text" type="text" name="uname" placeholder="Username" required=""><br>
+                    <input class="text" type="password" name="pswd" placeholder="Password" required=""><br>
+
+					
+
+                    
+					<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>I Agree To The Terms & Conditions</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					<input type="submit" value="SIGNUP">
+				</form>
+			</div>
+		</div>
+        </div>
+	
+		
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form method="post">
+        <label>:</label>
+        <input type="text" name="" placeholder="Enter your Firstname"><br><br>
+        <label>:</label>
+        <input type="text" name="" placeholder="Enter your lastname"><br><br>
+        <label>:</label>
+        <input type="text" name=""><br><br>
+        <label>Place:</label>
+        <input type="text" name="place"><br><br>
+        <label>E-mail:</label>
+        <input type="email" name="email"><br><br>
+        <label>Phone:</label>
+        <input type="text" name="phone"><br><br>
+        <label>Username</label>
+        <input type="text" name="uname" ><br><br>
+        <label>Password:</label>
+        <input type="password" name="pswd"><br><br>
+        <input type="submit" value="register">
+        
+    </form>
+</body>
+</html> -->

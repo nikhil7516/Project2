@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="/static/css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="/static/images/fevicon.png" type="image/gif" />
+      <!-- font css -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="/static/css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <script type="text/javascript"> 
+         function preventBack() { 
+             window.history.forward();  
+         } 
+           
+         setTimeout("preventBack()", 0); 
+           
+         window.onunload = function () { null }; 
+     </script> 
+   </head>
+   <body>
+   {% if a %}
+    <div class="header_section header_bg">
+        <div class="container-fluid">
+           <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand"href="index.html"><h1>Admin DashBoard</h2></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                       <a class="nav-link" href="/product/">Manage products</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="/order/">View orders</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="/view customer/">view customers</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="/payment/">view payment</a>
+                    </li>
+                 </ul>
+                 <form class="form-inline my-1 my-lg-0">
+                    <div class="login_bt">
+                       <ul>
+                          <li><a href="/logout/"><span class="user_icon"><i class="fa fa-user" aria-hidden="true"></i></span>logout</a></li>
+                          
+                       </ul>
+                    </div>
+                 </form>
+              </div>
+           </nav>
+        </div>
+     </div>
+     
+  <div class="content">
+    
+    <div class="container">
+     
+
+      <div class="table-responsive custom-table-responsive">
+         <a class="btn btn-light btn-lg " href="/add/" role="button">Add Product</a>
+        <table class="table custom-table">
+          <thead>
+            <tr> 
+              <th scope="col">Product_photo</th>
+              <th scope="col">Product_Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">price</th>
+              <th scope="col">edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in a %}
+            <tr scope="row">
+              
+              <td> <img src="{{i.product_photo.url}}" alt="img" height="100px" width="100px"></td>
+              <td>{{i.Product_name}}</td>
+              <td>{{i.Quantity}}</td>
+              <td>{{i.Price}}</td>
+              <td><a href="/update/{{i.id}}">update</a>/<a href="/delete/{{i.id}}">delete</a></td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            {% endfor %}
+            
+          </tbody>
+        </table>
+        {% endif %}      
+      </div>
+       {% if b %}
+       <body class="body">
+       <div class="main-w3layouts wrapper">
+         <h1>Update</h1>
+         <div class="main-agileinfo">
+                 <div class="agileits-top">
+                     <form  method="post" enctype="multipart/form-data" >
+                         {% csrf_token %}
+                          <input class="text" type="text" name="name" value="{{b.Product_name}}" required=""><br>
+                         <input class="text" type="text" name="qn" value="{{b.Quantity}}" required=""><br>
+                         <input class="text" type="text" name="price" value="{{b.Price}}" required=""><br>
+                         <img src="{{b.product_photo.url}}" alt="img" height="100px" width="100px"><br><br>
+                         <input type="file" name="photo" required=""><br>         
+               <div class="wthree-text">
+                
+                 <div class="clear"> </div>
+               </div>
+               <input type="submit" value="UPDATE">
+             </form>
+           </div>
+         </div>
+             </div>
+             <!-- Custom Theme files -->
+   <link href="/static/css/register.css" rel="stylesheet" type="text/css" media="all" />
+   <!-- //Custom Theme files -->
+   <!-- web font -->
+   <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+   <!-- //web font -->
+</body>  
+       {% endif %} 
+       
+       
+      </div>
+      
+   </div>
+   
+   
+   
+   <script src="js/jquery-3.3.1.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/main.js"></script>
+</body>
+</html>
+
+        
+   

@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+}
+.form{
+    border: 1px solid black;
+    width: 600px;
+    margin: auto;
+   
+    
+}
+.title{
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.box{
+    height: 25px;
+    width: 30px;
+}
